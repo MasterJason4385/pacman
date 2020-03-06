@@ -3,8 +3,8 @@
 // 8px blocks
 
 function resize(){
-    var width = document.body.clientWidth-50;
-    var height = document.body.clientHeight-50;
+    var width = document.body.clientWidth;
+    var height = document.body.clientHeight;
     var wscale = Math.floor(width/224);
     var hscale = Math.floor(height/288);
     var scale;
