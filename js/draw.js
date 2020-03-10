@@ -1,10 +1,10 @@
-//224 x 288 px
-//28 x 36 blocks
-// 8px blocks
+var c = document.getElementsByTagName('canvas')[0];
+var ctx = c.getContext('2d');
+
 
 function resize(){
-    var width = document.body.clientWidth;
-    var height = document.body.clientHeight;
+    var width = document.body.clientWidth-50;
+    var height = document.body.clientHeight-50;
     var wscale = Math.floor(width/224);
     var hscale = Math.floor(height/288);
     var scale;
@@ -13,9 +13,16 @@ function resize(){
     }else{
         scale=hscale;
     }
-    scale = 'scale('+scale+')'
-    document.getElementsByTagName('canvas')[0].style.transform=scale;
+    c.width=scale*224;
+    c.height=scale*288;
+    c.style.width=scale*224;
+    c.style.height=scale*288;
+    draw()
+    console.log(scale)
 }
 
-window.addEventListener('resize',resize);
-resize();
+function draw(){
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(document.getElementById('background'),0,0,c.width,c.height);
+    setTimeout(draw)
+}
