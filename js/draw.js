@@ -24,5 +24,4 @@ function resize(){
 function draw(){
     ctx.imageSmoothingEnabled = false;
     ctx.drawImage(document.getElementById('background'),0,0,c.width,c.height);
-    setTimeout(draw)
 }
