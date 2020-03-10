@@ -1,2 +1,0 @@
-//Blue
-//Follow Blinky
