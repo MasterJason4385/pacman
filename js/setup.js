@@ -14,3 +14,5 @@ function decompress(input,f=function(i){if(i=='0'){return false}else{return true
     }
     return out;
 }
+
+//Maze[y][x]
